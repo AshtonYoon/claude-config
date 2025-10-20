@@ -116,7 +116,7 @@ def generate_status_line(input_data):
     # Version info (optional, smaller)
     version = input_data.get('version', '')
     if version:
-        parts.append(f"\033[90mv{version}\033[0m")  # Gray color
+        parts.append(f"\033[90mv{version}\033[0m 🐶")  # Gray color
     
     return " | ".join(parts)
 
