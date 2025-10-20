@@ -4,5 +4,9 @@
 /ide
 /statsig
 /logs
+/file-history
+/debug
 /.claude
 .DS_Store
+.serena
+history.jsonl
