@@ -10,3 +10,4 @@
 .DS_Store
 .serena
 history.jsonl
+.update.lock

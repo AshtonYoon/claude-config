@@ -16,7 +16,7 @@ Create a pull request from the current branch to dev branch:
 
    - Base branch: dev
    - Title: A clear, descriptive title based on the changes
-   - Body format:
+   - Body format (if @.github/PULL_REQUEST_TEMPLATE.md does not exist):
 
      ```
      ## Summary
