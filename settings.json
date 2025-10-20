@@ -1,8 +1,4 @@
 {
-  "feedbackSurveyState": {
-    "lastShownTime": 1754110266653
-  },
-  "model": "sonnet",
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
@@ -19,11 +15,6 @@
       "Bash(touch:*)"
     ],
     "deny": []
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "uv run ~/.claude/status_lines/status_line.py",
-    "padding": 0
   },
   "hooks": {
     "PreToolUse": [
@@ -113,5 +104,14 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "uv run ~/.claude/status_lines/status_line.py",
+    "padding": 0
+  },
+  "alwaysThinkingEnabled": false,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754110266653
   }
 }
