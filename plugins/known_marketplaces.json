@@ -1,0 +1,18 @@
+{
+  "anthropic-agent-skills": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/skills"
+    },
+    "installLocation": "/Users/ashton/.claude/plugins/marketplaces/anthropic-agent-skills",
+    "lastUpdated": "2025-10-25T05:47:07.259Z"
+  },
+  "playwright-skill": {
+    "source": {
+      "source": "github",
+      "repo": "lackeyjb/playwright-skill"
+    },
+    "installLocation": "/Users/ashton/.claude/plugins/marketplaces/playwright-skill",
+    "lastUpdated": "2025-10-26T09:55:11.357Z"
+  }
+}

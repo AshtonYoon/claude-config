@@ -110,7 +110,11 @@
     "command": "uv run ~/.claude/status_lines/status_line.py",
     "padding": 0
   },
-  "alwaysThinkingEnabled": false,
+  "enabledPlugins": {
+    "document-skills@anthropic-agent-skills": true,
+    "playwright-skill@playwright-skill": true
+  },
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754110266653
   }
