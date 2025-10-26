@@ -12,3 +12,6 @@
 - **hooks**: [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery)
 - **output-styles**: [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery)
 - **status_lines**: [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery)
+
+## Claude skills
+- **playwright-skill**: https://github.com/lackeyjb/playwright-skill
