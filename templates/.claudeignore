@@ -1,0 +1,361 @@
+# Claude Code Ignore File
+# Similar to .gitignore, but for Claude Code context management
+# Files and directories listed here will be excluded from Claude's context
+
+# ============================================================
+# DEPENDENCY DIRECTORIES
+# ============================================================
+
+# Node.js
+node_modules/
+.npm/
+.yarn/
+.pnp/
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Ruby
+.bundle/
+vendor/bundle/
+
+# Go
+vendor/
+
+# Rust
+target/
+
+# Java
+target/
+.mvn/
+.gradle/
+
+# PHP
+vendor/
+
+# ============================================================
+# BUILD OUTPUTS
+# ============================================================
+
+# Compiled files
+*.o
+*.so
+*.exe
+*.dll
+*.dylib
+*.class
+*.jar
+*.war
+*.ear
+
+# Build directories
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.vercel/
+
+# Webpack
+.webpack/
+
+# ============================================================
+# IDE AND EDITOR FILES
+# ============================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================
+# LOGS AND DEBUGGING
+# ============================================================
+
+# Log files
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Debug files
+*.pdb
+.pyre/
+.pytype/
+.mypy_cache/
+.pytest_cache/
+.coverage
+.hypothesis/
+htmlcov/
+
+# ============================================================
+# ENVIRONMENT AND SECRETS
+# ============================================================
+
+# Environment files (NEVER include these)
+.env
+.env.*
+.env.local
+.env.*.local
+*.env
+credentials.json
+secrets.json
+secret.yaml
+secrets.yaml
+
+# SSH and keys
+*.pem
+*.key
+*.cert
+id_rsa
+id_ed25519
+
+# Cloud credentials
+.aws/credentials
+.azure/
+.gcloud/
+
+# ============================================================
+# DATABASE FILES
+# ============================================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Database dumps
+*.sql.gz
+*.dump
+
+# ============================================================
+# CACHE AND TEMPORARY FILES
+# ============================================================
+
+# General cache
+.cache/
+*.cache
+.tmp/
+tmp/
+temp/
+
+# OS cache
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python cache
+.ipynb_checkpoints/
+.tox/
+
+# JavaScript/TypeScript cache
+.eslintcache
+.parcel-cache/
+.turbo/
+
+# ============================================================
+# TEST ARTIFACTS
+# ============================================================
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Test results
+test-results/
+playwright-report/
+.playwright/
+
+# Screenshots (unless they're part of the design)
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+# Exception: Keep design assets
+!assets/**/*.png
+!assets/**/*.jpg
+!public/**/*.png
+!public/**/*.jpg
+
+# ============================================================
+# DOCUMENTATION BUILDS
+# ============================================================
+
+# Sphinx
+_build/
+_static/
+
+# Docusaurus
+.docusaurus/
+
+# MkDocs
+site/
+
+# ============================================================
+# LARGE DATA FILES
+# ============================================================
+
+# Data directories
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.feather
+
+# Model files
+*.h5
+*.pkl
+*.pickle
+*.joblib
+*.pth
+*.pt
+*.onnx
+*.pb
+models/checkpoints/
+
+# Media files
+*.mp4
+*.avi
+*.mov
+*.mp3
+*.wav
+videos/
+audio/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================
+# VERSION CONTROL
+# ============================================================
+
+# Git
+.git/
+.gitattributes
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+
+# ============================================================
+# CI/CD ARTIFACTS
+# ============================================================
+
+# GitHub Actions
+.github/workflows/*.log
+
+# Jenkins
+.jenkins/
+
+# CircleCI
+.circleci/
+
+# ============================================================
+# CONTAINERS AND VIRTUALIZATION
+# ============================================================
+
+# Docker
+.dockerignore
+
+# Vagrant
+.vagrant/
+
+# ============================================================
+# PACKAGE MANAGER LOCKS (Optional - consider your workflow)
+# ============================================================
+
+# Uncomment if you don't want lock files in context
+# They can be verbose but are sometimes important
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# Gemfile.lock
+# Cargo.lock
+# go.sum
+
+# ============================================================
+# PROJECT-SPECIFIC EXCLUDES
+# ============================================================
+
+# Add your project-specific excludes below
+
+# Examples:
+# legacy/              # Old code you're not working with
+# external/            # Third-party code
+# vendor/              # Vendored dependencies
+# fixtures/            # Test fixtures
+# mocks/               # Mock data
+
+# ============================================================
+# CLAUDE CODE SPECIFIC
+# ============================================================
+
+# Claude Code activity logs (if you don't want them in context)
+.claude/hooks/activity.json
+.claude/logs/
+
+# ============================================================
+# NOTES
+# ============================================================
+
+# This file helps manage Claude Code's context window efficiently
+# by excluding files that:
+# 1. Are generated artifacts (build output, compiled files)
+# 2. Are dependencies (node_modules, venv)
+# 3. Contain secrets or credentials
+# 4. Are large binary or data files
+# 5. Are not relevant to code understanding
+
+# Remember:
+# - Be thoughtful about what you exclude
+# - Don't exclude files you might need Claude to read or modify
+# - You can always override by explicitly asking Claude to read an ignored file
+# - Patterns work like .gitignore (supports *, ?, [abc], **)
+
+# To verify what's being ignored:
+# Use the Glob tool to see what files match patterns
