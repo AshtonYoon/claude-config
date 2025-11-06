@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "plugins": {
+    "document-skills@anthropic-agent-skills": {
+      "version": "unknown",
+      "installedAt": "2025-10-29T05:35:30.918Z",
+      "lastUpdated": "2025-10-29T05:35:30.918Z",
+      "installPath": "/Users/ashton/.claude/plugins/marketplaces/anthropic-agent-skills/",
+      "gitCommitSha": "c74d647e56e6daa12029b6acb11a821348ad044b",
+      "isLocal": true
+    },
+    "playwright-skill@playwright-skill": {
+      "version": "4.0.2",
+      "installedAt": "2025-10-29T05:35:30.918Z",
+      "lastUpdated": "2025-10-29T05:35:30.918Z",
+      "installPath": "/Users/ashton/.claude/plugins/marketplaces/playwright-skill/",
+      "gitCommitSha": "2687009f83fb6e6e40c2d144e8280c2b04e0dd7e",
+      "isLocal": true
+    }
+  }
+}
