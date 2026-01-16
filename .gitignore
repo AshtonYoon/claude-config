@@ -11,3 +11,9 @@
 .serena
 history.jsonl
 .update.lock
+/plans
+stats-cache.json
+/chrome/chrome-native-host
+/cache/changelog.md
+/plugins
+update-claude-code.log
