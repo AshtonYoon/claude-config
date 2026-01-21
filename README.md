@@ -15,3 +15,4 @@
 
 ## Claude skills
 - **playwright-skill**: https://github.com/lackeyjb/playwright-skill
+- **frontend-skill**: https://github.com/vercel-labs/agent-skills
