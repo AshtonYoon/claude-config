@@ -141,6 +141,58 @@ def load_development_context(source):
     return "\n".join(context_parts)
 
 
+ORANGE = "\033[38;2;215;119;87m"
+RESET = "\033[0m"
+# Reverse video paints the cell orange and carves the glyph out in the
+# terminal background color, so any character can be used as an eye or mouth.
+CARVE = "\033[1;7m"
+CARVE_OFF = "\033[22;27m"
+
+# name: (left eye, right eye, mouth)
+# Heavy glyphs keep the carved strokes close to the mascot's blocky weight.
+FACES = {
+    "smile": ("n", "n", " "),
+    "sparkle": ("✦", "✦", "▼"),
+    "sleepy": ("━", "━", " "),
+    "cry": ("┳", "┳", " "),
+    "pout": ("━", "━", "▲"),
+}
+PLAIN = [
+    " ▐▛███▜▌ ",
+    "▝▜█████▛▘",
+    "  ▘▘ ▝▝  ",
+]
+
+
+def draw_face(name):
+    """Return the mascot lines with the given face carved into the body."""
+    left, right, mouth = FACES[name]
+    return [
+        f" ▐{CARVE}{left}   {right}{CARVE_OFF}▌ ",
+        f"▝▜{CARVE}  {mouth}  {CARVE_OFF}▛▘",
+        "  ▘▘ ▝▝  ",
+    ]
+
+
+def get_mascot():
+    """Return the Claude Code mascot followed by every face as orange block art."""
+    crabs = [PLAIN] + [draw_face(name) for name in FACES]
+    art = ["   ".join(lines) for lines in zip(*crabs)]
+    # Leading newline keeps the art aligned below the hook message prefix
+    return "\n" + "\n".join(f"{ORANGE}{line}{RESET}" for line in art)
+
+
+def print_faces(prefix="", per_row=5):
+    """Print available faces in a grid, optionally filtered by name prefix."""
+    names = [name for name in FACES if name.startswith(prefix)]
+    for i in range(0, len(names), per_row):
+        row = names[i:i + per_row]
+        print(" ".join(f"{name:<13}" for name in row))
+        for lines in zip(*(draw_face(name) for name in row)):
+            print("     ".join(f"{ORANGE}{line}{RESET}" for line in lines))
+        print()
+
+
 def main():
     try:
         # Parse command line arguments
@@ -149,7 +201,14 @@ def main():
                           help='Load development context at session start')
         parser.add_argument('--announce', action='store_true',
                           help='Announce session start via TTS')
+        parser.add_argument('--faces', nargs='?', const='', default=None,
+                          metavar='PREFIX',
+                          help='Preview mascot faces (optionally by name prefix) and exit')
         args = parser.parse_args()
+
+        if args.faces is not None:
+            print_faces(args.faces)
+            sys.exit(0)
         
         # Read JSON input from stdin
         input_data = json.loads(sys.stdin.read())
@@ -167,6 +226,7 @@ def main():
             if context:
                 # Using JSON output to add context
                 output = {
+                    "systemMessage": get_mascot(),
                     "hookSpecificOutput": {
                         "hookEventName": "SessionStart",
                         "additionalContext": context
@@ -198,6 +258,10 @@ def main():
             except Exception:
                 pass
         
+        # Draw the mascot on a fresh session
+        if source == "startup":
+            print(json.dumps({"systemMessage": get_mascot()}))
+
         # Success
         sys.exit(0)
         
