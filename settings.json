@@ -44,7 +44,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff"
+            "command": "afplay ~/.claude/sounds/herdr-notification.mp3"
           }
         ]
       }
@@ -54,7 +54,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff"
+            "command": "afplay ~/.claude/sounds/herdr-notification.mp3"
           }
         ]
       }
